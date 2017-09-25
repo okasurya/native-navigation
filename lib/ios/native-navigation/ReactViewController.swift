@@ -63,7 +63,7 @@ public struct WeakViewHolder {
 
 open class ReactViewController: UIViewController {
 
-  let nativeNavigationInstanceId: String
+  open let nativeNavigationInstanceId: String
   var sharedElementsById: [String: WeakViewHolder] = [:]
   var sharedElementGroupsById: [String: WeakViewHolder] = [:]
   var isPendingNavigationTransition: Bool = false
