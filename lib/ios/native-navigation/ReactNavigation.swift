@@ -19,7 +19,7 @@ class ReactNavigation: NSObject {
     coordinator = ReactNavigationCoordinator.sharedInstance
   }
 
-  func constantsToExport() -> [String: Any] {
+  func constantsToExport() -> [AnyHashable: Any]! {
     return [
       "VERSION": VERSION
     ]
