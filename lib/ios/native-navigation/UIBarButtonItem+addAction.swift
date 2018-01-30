@@ -10,11 +10,12 @@ import Foundation
 
 
 public class ClosureWrapper : NSObject {
-  let _callback : (Void) -> Void
+  let _callback : () -> Void
   init(callback : @escaping (Void) -> Void) {
     _callback = callback
   }
 
+  @objc
   public func invoke() {
     _callback()
   }
