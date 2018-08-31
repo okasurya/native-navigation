@@ -19,13 +19,13 @@ class ReactNavigation: NSObject {
     coordinator = ReactNavigationCoordinator.sharedInstance
   }
 
-  func constantsToExport() -> [AnyHashable: Any]! {
+  @objc func constantsToExport() -> [AnyHashable: Any]! {
     return [
       "VERSION": VERSION
     ]
   }
 
-  func registerScreen(
+  @objc func registerScreen(
     _ screenName: String,
     properties: [String: AnyObject],
     waitForRender: Bool,
@@ -50,7 +50,7 @@ class ReactNavigation: NSObject {
     }
   }
 
-  func signalFirstRenderComplete(_ instanceId: String) {
+  @objc func signalFirstRenderComplete(_ instanceId: String) {
     if let vc = coordinator.viewControllerForId(instanceId) {
       DispatchQueue.main.async {
         vc.signalFirstRenderComplete()
