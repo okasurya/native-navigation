@@ -106,7 +106,7 @@ public class ScreenCoordinator {
         setupFragmentForSharedElement(currentFragment,  fragment, ft, options);
     } else {
       PresentAnimation anim = PresentAnimation.Push;
-      ft.setCustomAnimations(anim.enter, anim.exit, anim.popEnter, anim.popExit);
+//      ft.setCustomAnimations(anim.enter, anim.exit, anim.popEnter, anim.popExit);
     }
     BackStack bsi = getCurrentBackStack();
     ft
@@ -179,8 +179,8 @@ public class ScreenCoordinator {
     backStacks.push(bsi);
     // TODO: dry this up with pushScreen
     FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction()
-        .setAllowOptimization(true)
-        .setCustomAnimations(anim.enter, anim.exit, anim.popEnter, anim.popExit);
+        .setAllowOptimization(true);
+//        .setCustomAnimations(anim.enter, anim.exit, anim.popEnter, anim.popExit);
 
     Fragment currentFragment = getCurrentFragment();
     if (currentFragment != null && !isFragmentTranslucent(fragment)) {
